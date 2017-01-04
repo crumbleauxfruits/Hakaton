@@ -30,6 +30,10 @@ public class Personne {
         this.dateNaissance = dateNaissance;
     }
     
+    public String toString(){
+        return "Personne: " + prenom + " " + nom;
+    }
+    
     public String getPrenom(){
         return prenom;
     }

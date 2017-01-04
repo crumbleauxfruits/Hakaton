@@ -26,6 +26,10 @@ public class Conjoint {
         this.nom = nom;
     }
     
+    public String toString(){
+        return "Conjoint: " + prenom + " " + nom; 
+    }
+    
     public LinkedList getEnfants(){
         return enfants;
     }

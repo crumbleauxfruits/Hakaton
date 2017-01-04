@@ -21,15 +21,18 @@ public class Arbre {
     
     public void ajouterConjoint(Personne p, Conjoint c){
         Personne cherche = ancetreUltime;
-        LinkedList<Conjoint> conjoints;
-        LinkedList<Personne> enfants = new LinkedList<>();
-        while(cherche.getPrenom()!=p.getPrenom() || cherche.getNom()!=p.getNom()
-                || cherche.getDateNaissance()!=p.getDateNaissance()){
+        System.out.println(p);
+        System.out.println(c);
+        if(cherche.getPrenom()==p.getPrenom() || cherche.getNom()==p.getNom()
+                || cherche.getDateNaissance()==p.getDateNaissance()){
+            p.ajouterConjoint(c);
+        }else{
+            LinkedList<Personne> enfants = new LinkedList<>();            
             enfants = cherche.getEnfants();
-            
-                
-                
-            
-        }
+            ListIterator<Personne> iter = enfants.listIterator();
+            while(iter.hasNext()){
+                ajouterConjoint(iter.next(), c);
+            }
+        }    
     }
 }
